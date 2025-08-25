@@ -1,0 +1,668 @@
+/* General Styles */
+:root {
+  --primary-color: #6a89cc; /* Slightly desaturated blue for highlights */
+  --secondary-color: #4CAF50; /* A green accent color */
+  --accent-color: #FFC107; /* Amber for strong accents */
+  --text-color: #f0f0f0; /* Light gray for general text */
+  --background-color: #000000; /* Pure black background */
+  --light-gray: #333333; /* Darker gray for borders/dividers */
+  --dark-gray: #bbbbbb; /* Lighter gray for subtle text on black */
+  --white: #ffffff; /* Keep white for certain elements if needed */
+  --card-background: #121212; /* Very dark gray for cards/sections */
+  --shadow-light: rgba(255, 255, 255, 0.1);
+  --shadow-medium: rgba(255, 255, 255, 0.2);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--background-color); /* Should be black */
+  background-image: linear-gradient(0deg, transparent 24%, rgba(76, 175, 80, 0.15) 25%, rgba(76, 175, 80, 0.15) 26%, transparent 27%, transparent 74%, rgba(76, 175, 80, 0.15) 75%, rgba(76, 175, 80, 0.15) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(76, 175, 80, 0.15) 25%, rgba(76, 175, 80, 0.15) 26%, transparent 27%, transparent 74%, rgba(76, 175, 80, 0.15) 75%, rgba(76, 175, 80, 0.15) 76%, transparent 77%, transparent);
+  background-size: 50px 50px;
+  background-position: 0 0, 25px 25px;
+  animation: background-move 60s linear infinite;
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes background-move {
+  from { background-position: 0 0, 25px 25px; }
+  to { background-position: 50px 50px, 75px 75px; }
+}
+
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+header {
+  background-color: var(--card-background); /* Use card background for header */
+  background-image: linear-gradient(0deg, transparent 24%, rgba(76, 175, 80, 0.15) 25%, rgba(76, 175, 80, 0.15) 26%, transparent 27%, transparent 74%, rgba(76, 175, 80, 0.15) 75%, rgba(76, 175, 80, 0.15) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(76, 175, 80, 0.15) 25%, rgba(76, 175, 80, 0.15) 26%, transparent 27%, transparent 74%, rgba(76, 175, 80, 0.15) 75%, rgba(76, 175, 80, 0.15) 76%, transparent 77%, transparent);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  animation: background-move-small 40s linear infinite;
+  color: var(--text-color);
+  padding: 1rem 0;
+  box-shadow: 0 4px 8px var(--shadow-medium);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+@keyframes background-move-small {
+  from { background-position: 0 0, 15px 15px; }
+  to { background-position: 30px 30px, 45px 45px; }
+}
+
+header nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+header nav h1 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Audiowide', cursive; /* Applied unique font */
+  font-size: 1.5rem; /* Further reduced font size */
+  color: var(--primary-color); /* Use primary for title */
+  display: flex; /* Make h1 a flex container */
+  align-items: center; /* Vertically align icon and text */
+  gap: 0.5rem; /* Space between icon and text */
+}
+
+.header-title-icon {
+  font-size: 2rem;
+  color: var(--accent-color); /* A vibrant color for the icon */
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+header nav ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+header nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--secondary-color);
+  transition: width 0.3s ease-in-out;
+}
+
+header nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Footer Styles */
+footer {
+  background-color: var(--card-background);
+  background-image: linear-gradient(0deg, transparent 24%, rgba(76, 175, 80, 0.15) 25%, rgba(76, 175, 80, 0.15) 26%, transparent 27%, transparent 74%, rgba(76, 175, 80, 0.15) 75%, rgba(76, 175, 80, 0.15) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(76, 175, 80, 0.15) 25%, rgba(76, 175, 80, 0.15) 26%, transparent 27%, transparent 74%, rgba(76, 175, 80, 0.15) 75%, rgba(76, 175, 80, 0.15) 76%, transparent 77%, transparent);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  animation: background-move-small 40s linear infinite;
+  color: var(--text-color);
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: auto;
+  box-shadow: 0 -4px 8px var(--shadow-medium);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.footer-contact-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-contact-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-contact-links a:hover {
+  color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.footer-icon {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  transition: color 0.3s ease;
+}
+
+.footer-contact-links a:hover .footer-icon {
+  color: var(--secondary-color);
+}
+
+/* Section Styles */
+section {
+  padding: 4rem 1.5rem;
+  margin: 1.5rem auto;
+  max-width: 1000px;
+  background-color: var(--card-background); 
+  background-image: linear-gradient(0deg, transparent 24%, rgba(76, 175, 80, 0.15) 25%, rgba(76, 175, 80, 0.15) 26%, transparent 27%, transparent 74%, rgba(76, 175, 80, 0.15) 75%, rgba(76, 175, 80, 0.15) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(76, 175, 80, 0.15) 25%, rgba(76, 175, 80, 0.15) 26%, transparent 27%, transparent 74%, rgba(76, 175, 80, 0.15) 75%, rgba(76, 175, 80, 0.15) 76%, transparent 77%, transparent);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  animation: background-move-medium 50s linear infinite;
+  border-radius: 12px;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 8px 16px var(--shadow-medium);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+@keyframes background-move-medium {
+  from { background-position: 0 0, 20px 20px; }
+  to { background-position: 40px 40px, 60px 60px; }
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px var(--shadow-medium);
+  border-color: var(--secondary-color); /* Change border color on hover */
+}
+
+section h2 {
+  color: var(--secondary-color); /* Use secondary color for headings */
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 3rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 4px;
+  bottom: -10px;
+  left: 15%;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
+h3 {
+  color: var(--primary-color);
+  margin-top: 2rem;
+  font-size: 1.8rem;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--dark-gray); /* Adjust for readability on dark background */
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+  padding-left: 0;
+  position: relative;
+  display: flex; /* Make list items flex containers */
+  align-items: center; /* Vertically align icon and text */
+  gap: 0.8rem; /* Space between icon and text */
+}
+
+/* Remove the custom bullet point */
+ul li::before {
+  content: none;
+}
+
+.skill-icon {
+  font-size: 1.4rem;
+  color: var(--secondary-color); /* Use secondary color for skill icons */
+}
+
+/* Optional: Specific colors for some skill icons */
+.skill-icon.js { color: #F7DF1E; }
+.skill-icon.ts { color: #007ACC; }
+.skill-icon.react { color: #61DAFB; }
+.skill-icon.python { color: #3776AB; }
+.skill-icon.java { color: #007396; }
+.skill-icon.c { color: #A8B9CC; } /* Color for C icon */
+.skill-icon.cpp { color: #00599C; } /* Color for C++ icon */
+.skill-icon.html { color: #E34F26; }
+.skill-icon.css { color: #1572B6; }
+.skill-icon.redux { color: #764ABC; }
+.skill-icon.nextjs { color: #000000; filter: invert(1); } /* Invert for dark theme */
+.skill-icon.vuejs { color: #4FC08D; }
+.skill-icon.bootstrap { color: #7952B3; } /* Color for Bootstrap icon */
+.skill-icon.nodejs { color: #339933; }
+.skill-icon.express { color: #ffffff; } /* White for contrast on dark */
+.skill-icon.graphql { color: #E10098; }
+.skill-icon.mongodb { color: #47A248; }
+.skill-icon.postgresql { color: #336791; }
+.skill-icon.mysql { color: #4479A1; }
+.skill-icon.oracle { color: #F80000; } /* Color for Oracle SQL Plus */
+.skill-icon.git { color: #F05033; }
+.skill-icon.pandas { color: #150458; } /* Color for Pandas */
+.skill-icon.numpy { color: #013243; } /* Color for NumPy */
+.skill-icon.tensorflow { color: #FF6F00; } /* Color for TensorFlow */
+.skill-icon.huggingface { color: #FFD100; } /* Color for HuggingFace Transformers */
+.skill-icon.jira { color: #0052CC; }
+.skill-icon.aws { color: #FF9900; }
+.skill-icon.googlecolab { color: #F9AB00; } /* Color for Google Colab */
+.skill-icon.rstudio { color: #4285F4; } /* Color for R Studio */
+.skill-icon.docker { color: #2496ED; }
+
+/* Animation Styles */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Additional Styles for layout and content presentation */
+.experience-item, .skills-category, .project-item, .education-item {
+  background-color: var(--card-background);
+  background-image: linear-gradient(0deg, transparent 24%, rgba(76, 175, 80, 0.15) 25%, rgba(76, 175, 80, 0.15) 26%, transparent 27%, transparent 74%, rgba(76, 175, 80, 0.15) 75%, rgba(76, 175, 80, 0.15) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(76, 175, 80, 0.15) 25%, rgba(76, 175, 80, 0.15) 26%, transparent 27%, transparent 74%, rgba(76, 175, 80, 0.15) 75%, rgba(76, 175, 80, 0.15) 76%, transparent 77%, transparent);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  animation: background-move-small 40s linear infinite;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px var(--shadow-light);
+  transition: transform 0.2s ease-in-out, border-color 0.2s ease;
+}
+
+.experience-item:hover, .skills-category:hover, .project-item:hover, .education-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px var(--shadow-medium);
+  border-color: var(--secondary-color); /* Change border color on hover */
+}
+
+.experience-item h3, .skills-category h3, .project-item h3, .education-item h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-item a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.project-item a:hover {
+  background-color: #3e8e41; /* Adjusted hover color for dark theme */
+}
+
+/* Dynamic Background for About Section */
+#about {
+  position: relative;
+  overflow: hidden;
+  background: var(--card-background); /* Fallback to solid color */
+  background-image: linear-gradient(0deg, transparent 24%, rgba(76, 175, 80, 0.15) 25%, rgba(76, 175, 80, 0.15) 26%, transparent 27%, transparent 74%, rgba(76, 175, 80, 0.15) 75%, rgba(76, 175, 80, 0.15) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(76, 175, 80, 0.15) 25%, rgba(76, 175, 80, 0.15) 26%, transparent 27%, transparent 74%, rgba(76, 175, 80, 0.15) 75%, rgba(76, 175, 80, 0.15) 76%, transparent 77%, transparent);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  animation: background-move-medium 50s linear infinite;
+}
+
+#about::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(var(--primary-color), 0.05); /* Slightly increased opacity for visibility */
+  opacity: 0.3;
+  transform: rotate(20deg);
+  animation: background-pan 15s infinite alternate ease-in-out;
+}
+
+@keyframes background-pan {
+  0% {
+    transform: translate(0%, 0%) rotate(20deg);
+  }
+  100% {
+    transform: translate(-10%, -10%) rotate(25deg);
+  }
+}
+
+/* Ensure content is above the animation */
+#about > * {
+  position: relative;
+  z-index: 1;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column; /* Keep column direction for content flow */
+  align-items: center; /* Center items within the about section */
+  text-align: center;
+}
+
+.about-content h2 {
+  margin-bottom: 1rem; /* Adjust margin below heading */
+}
+
+.about-content p {
+  margin-bottom: 0.5rem; /* Adjust margin for paragraphs */
+}
+
+.author-name {
+  font-size: 2.2rem; /* Increased font size */
+  font-weight: bold;
+  color: var(--primary-color); /* Use a vibrant color for the name */
+  margin-bottom: 1rem; /* Space below the name */
+}
+
+.profile-photo {
+  width: 350px; /* Increased width */
+  height: 350px; /* Increased height */
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 3rem; /* More space below the photo */
+  border: 7px solid var(--secondary-color);
+  box-shadow: 0 0 25px var(--shadow-medium); /* Increased shadow */
+}
+
+.resume-link {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: var(--accent-color);
+  color: var(--card-background); /* Darker text for resume link */
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.resume-link:hover {
+  background-color: #e6b300; /* Slightly darker accent on hover */
+  transform: translateY(-3px);
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--dark-gray); /* Adjust text color for readability */
+}
+
+.contact-icon {
+  color: var(--secondary-color); /* Adjust icon color for dark theme */
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.contact-info a {
+  color: var(--primary-color); /* Adjust link color for dark theme */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  header nav ul {
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  header nav h1 {
+    text-align: center;
+    padding-left: 0;
+  }
+
+  section {
+    padding: 2rem 1rem;
+    margin: 1rem auto;
+  }
+
+  section h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+/* Responsive Design for About Section */
+@media (max-width: 768px) {
+  .profile-photo {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 2rem;
+  }
+
+  .resume-link {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Education Section - Train Theme */
+.train-theme {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  padding: 4rem 1rem; /* Adjust padding for vertical train theme */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.train-theme h2 {
+  margin-bottom: 3rem;
+}
+
+.train-track-container {
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 50px; /* Space for the track to the left of cars */
+  padding-right: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.train-track {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 75px; /* Position the track vertically */
+  width: 8px; /* Thickness of the track */
+  background: linear-gradient(to bottom, #4a4a5c 0%, #333333 100%); /* Dark gradient for vertical track */
+  z-index: 0;
+}
+
+.train-cars-wrapper {
+  display: flex;
+  flex-direction: column; /* Change to vertical layout */
+  justify-content: center; /* Center items vertically */
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 0; /* Padding at the top/bottom of the train */
+  position: relative;
+  z-index: 1;
+}
+
+.train-car {
+  position: relative;
+  background-color: var(--card-background);
+  border: 2px solid var(--primary-color);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px var(--shadow-medium);
+  flex-shrink: 0;
+  width: 400px; /* Adjusted width for vertical layout */
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.train-car:hover {
+  transform: translateX(-5px) scale(1.02); /* Adjusted hover effect for vertical */
+  box-shadow: 0 12px 24px var(--shadow-medium);
+  border-color: var(--secondary-color);
+}
+
+.train-car.connector {
+  width: 4px; /* Thickness of the connector line */
+  height: 80px; /* Length of the connector */
+  background-color: var(--primary-color);
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  margin: -1rem 0; /* Adjust margin to bring connectors closer */
+  transform: none;
+  transition: none;
+}
+
+.train-car .education-item {
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.train-car .education-item h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.train-car .education-item p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.train-car .education-item ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.train-car .education-item ul li {
+  justify-content: center;
+}
+
+/* Responsive adjustments for train theme */
+@media (max-width: 768px) {
+  .train-theme {
+    padding: 2rem 0.5rem;
+  }
+
+  .train-car {
+    width: 90%; /* Make cars take more width on small screens */
+    max-width: 300px; /* Max width for smaller screens */
+    padding: 1rem;
+  }
+
+  .train-car.connector {
+    height: 60px;
+    margin: -0.5rem 0;
+  }
+
+  .train-theme h2 {
+    font-size: 2.5rem;
+  }
+
+  .train-car .education-item h3 {
+    font-size: 1.4rem;
+  }
+
+  .train-car .education-item p {
+    font-size: 0.9rem;
+  }
+}
