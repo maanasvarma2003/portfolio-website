@@ -7,7 +7,7 @@ function About() {
   return (
     <section ref={ref as React.Ref<HTMLElement>} id="about" className={isVisible ? 'fade-in visible' : 'fade-in'}>
       <div className="about-content">
-        <img src="profilepic.jpg" alt="My Profile" className="profile-photo" />
+        <img src="/portfolio-website/profilepic.jpg" alt="My Profile" className="profile-photo" />
         <h2>About Me</h2>
         <p>We don't wait for a better future, we create it.</p>
         <p className="author-name">MAANAS VARMA</p>
