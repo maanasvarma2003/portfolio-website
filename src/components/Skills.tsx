@@ -8,13 +8,11 @@ import {
   FaGitAlt,
   FaPython,
   FaJava,
-  FaServer,
   FaAws,
 } from "react-icons/fa";
 import {
   SiTypescript,
   SiMongodb,
-  SiExpress,
   SiPostgresql,
   SiRadstudio,
   SiC,
@@ -27,7 +25,6 @@ import {
   SiTensorflow,
   SiHuggingface,
   SiGooglecolab,
-  SiGraphql,
 } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
 function Skills() {
@@ -60,7 +57,6 @@ function Skills() {
         <h3>Backend Technologies</h3>
         <ul>
           <li><FaNodeJs className="skill-icon nodejs" /> Node.js</li>
- 
         </ul>
       </div>
       <div className="skills-category">

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, RefObject } from 'react';
+import { useEffect, useRef, useState, type RefObject } from 'react';
 
 const useScrollReveal = (threshold = 0.1): [RefObject<HTMLElement | null>, boolean] => {
   const [isVisible, setIsVisible] = useState(false);
