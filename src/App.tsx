@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import About from './components/About';
@@ -11,11 +11,12 @@ import Education from './components/Education';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/portfolio-website">
       <div>
         <Header />
         <main>
           <Routes>
+            <Route index element={<About />} />
             <Route path="/" element={<About />} />
             <Route path="/about" element={<About />} />
             <Route path="/education" element={<Education />} />
@@ -23,6 +24,7 @@ function App() {
             <Route path="/skills" element={<Skills />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Navigate to="/about" replace />} />
           </Routes>
         </main>
         <Footer />

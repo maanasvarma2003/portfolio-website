@@ -25,8 +25,10 @@ import {
   SiTensorflow,
   SiHuggingface,
   SiGooglecolab,
+  SiStreamlit,
+  SiScikitlearn,
 } from "react-icons/si";
-import { VscCode } from "react-icons/vsc";
+import { VscCode, VscFileBinary } from "react-icons/vsc";
 function Skills() {
   const [ref, isVisible] = useScrollReveal();
 
@@ -75,6 +77,9 @@ function Skills() {
           <li><SiNumpy className="skill-icon numpy" /> NumPy</li>
           <li><SiTensorflow className="skill-icon tensorflow" /> TensorFlow</li>
           <li><SiHuggingface className="skill-icon huggingface" /> HuggingFace Transformers</li>
+          <li><SiScikitlearn className="skill-icon sklearn" /> scikit-learn</li>
+          <li><SiStreamlit className="skill-icon streamlit" /> Streamlit</li>
+          <li><VscFileBinary className="skill-icon safetensors" /> safetensors</li>
         </ul>
       </div>
       <div className="skills-category">

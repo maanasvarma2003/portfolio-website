@@ -21,6 +21,20 @@ function Projects() {
           <p>The bot is designed with an aggressive risk tolerance.</p>
           <a href="https://github.com/maanasvarma2003/AI-Trading-Bot" target="_blank" rel="noopener noreferrer">View Project</a>
         </div>
+        <div className="project-item">
+          <h3>AI PDF CHATBOT </h3>
+          <p>Tools: [Hugging face, python, streamlit, safetensors, pdfplumbe, promtp engineering, Gen AI]</p>
+          <p>We use Generative AI to create a chatbot that can answer questions from a pdf file.prompt engineering is used to improve the accuracy of the chatbot.</p>
+          <p>This chatbot improvises the user epxperience by providing instant answers to the user's queries</p>
+          <a href="https://github.com/maanasvarma2003/AI-pdf-chatbot" target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
+        <div className="project-item">
+          <h3>STOCK MARKET PREDICTOR</h3>
+          <p>Tools: [python, streamlit, pandas, numpy, matplotlib, scikit-learn, yfinance]</p>
+          <p>This project provides an end-to-end pipeline for stock market prediction using both tree-based (XGBoost) and deep learning (LSTM) models</p>
+          <p>It includes data download, feature engineering with technical indicators, walk-forward evaluation, and a simple backtester.</p>
+          <a href="https://github.com/maanasvarma2003/stock-market-prediction" target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
       </div>
     </section>
   );
