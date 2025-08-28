@@ -11,7 +11,7 @@ import Education from './components/Education';
 
 function App() {
   return (
-    <Router basename="/portfolio-website">
+    <Router>
       <div>
         <Header />
         <main>
