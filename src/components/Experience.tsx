@@ -7,7 +7,7 @@ function Experience() {
     <section ref={ref} id="experience" className={isVisible ? 'slide-up visible' : 'slide-up'}>
       <h2>Experience</h2>
       <div className="experience-item">
-        <h3>Front end developer intern</h3>
+        <h3>Front end Developer Intern</h3>
         <p>May 2024 - June 2024</p>
         <ul>
           <li>Designed a website for a company using frontend tools.</li>
