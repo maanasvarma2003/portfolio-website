@@ -16,7 +16,7 @@ a strong aptitude and problem solving skills. I am passionate about innovation, 
         <p>Hobbies: Sports like Football, Badminton and cricket. I am also into trading and investing in stocks and equities . I have 'A' certificate in NCC and a black belt in karate.</p>
         <p>I like to travel and explore new places. I have visited many places in india and abroad</p>
         <p>I like to dive into challenges and learn new things. I am a quick learner and I am always looking for new challenges and opportunities to grow.</p>
-        <a href="https://drive.google.com/file/d/1WmWxp8hxFUk8ksA3x-H0tOlrZ9vI72Zq/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="resume-link">View Resume</a>
+        <a href="https://drive.google.com/file/d/1FpqMjz9DkhsLuH3EbtuCxqI7TbVLyRH2/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="resume-link">View Resume</a>
       </div>
     </section>
   );
