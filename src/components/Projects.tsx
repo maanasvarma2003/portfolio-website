@@ -35,6 +35,14 @@ function Projects() {
           <p>It includes data download, feature engineering with technical indicators, walk-forward evaluation, and a simple backtester.</p>
           <a href="https://github.com/maanasvarma2003/stock-market-prediction" target="_blank" rel="noopener noreferrer">View Project</a>
         </div>
+        <div className="project-item">
+          <h3>BLOCKCHAIN BASED VOTING SYSTEM</h3>
+          <p>Tools: [blockchain, python, solidity, web3, javascript]</p>
+          <p>This project developed a Blockchain-Based Voting System to address issues of security, transparency, and trust in traditional elections. It leverages Ethereum smart contracts (written in Solidity with Truffle) for tamper-proof vote recording and election management, running on a local Ganache network.
+          </p>
+          <p>A user-friendly React (TypeScript) frontend, integrating Web3.js, allows for secure voter registration and casting encrypted votes using Crypto-js to ensure anonymity. The system is designed for auditability and prevents double voting.</p>
+          <a href="https://github.com/maanasvarma2003/blockchain-based-voting-system" target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
       </div>
     </section>
   );
