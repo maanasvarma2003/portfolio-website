@@ -43,6 +43,14 @@ function Projects() {
           <p>A user-friendly React (TypeScript) frontend, integrating Web3.js, allows for secure voter registration and casting encrypted votes using Crypto-js to ensure anonymity. The system is designed for auditability and prevents double voting.</p>
           <a href="https://github.com/maanasvarma2003/blockchain-based-voting-system" target="_blank" rel="noopener noreferrer">View Project</a>
         </div>
+         <div className="project-item">
+          <h3>AI-enabled rural loan underwriting platform</h3>
+          <p>Tools: [React, React Router, Tailwind CSS, React Icons, Node.js, Express, Multer, CORS, REST APIs, PWA (offline-first), Vercel, GitHub, FS logging]</p>
+          <p>Developed ensemble risk-scoring (gradient boosting + rules), achieving AUC 0.94, KS 0.52, ~0.8s inference. Implemented offline-first forms and resumable file uploads, processing 50K+ applications/month and ~120GB data
+          </p>
+          <p>Created interactive dashboards (score factors, progress, status cards) for underwriting explainability and monitoring. Developed modular upload and application APIs for easy integration with core LOS/LMS via webhooks and JWT auth</p>
+          <a href="https://ai-loan-assistant-e8rp.vercel.app/" target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
       </div>
     </section>
   );
